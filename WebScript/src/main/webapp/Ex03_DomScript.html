@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	function print(){
+		let ele = document.getElementById("demo");
+		console.log(ele);
+		ele.innerHTML = "태그 안에 공간에 텍스트 입력 >> 버튼 클릭시 이 텍스트 출력";
+		
+		//document.getElementById("demo");
+		
+		//Domscript는 id속성 있어야하고, 유일값...
+		
+		//innerHTML : p태그 안에 공간(inner)
+		//div, p value 속성이 없는 거에 가능
+		//안쪽에 innerText, innerHTML
+		//ele : p태그
+	}
+	
+	
+	</script>
+
+
+</head>
+<body>
+	<!-- 메모리에 DOM tree 로딩이 됨. 그리고 접근 사용 반대 sax모델
+	DOM 단점 : 처음 로딩은 느림
+	    장점 : 접근 제어가 편하다
+	 -->
+
+	<button onclick="print()">클릭하세요</button>
+	<p id ="demo">
+		demo라는 id는 p태그를 식별하는 값이다
+	</p>
+
+</body>
+</html>

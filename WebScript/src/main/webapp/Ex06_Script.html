@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	/*
+	JAVA
+	클래스 안에서 함수실행
+	public void print() {}
+	public String print() {return "";}
+	public int print(int num, int num2){return num+num2;}
+	
+	javascript
+	독립적으로 실행
+	function print(){}
+	
+	//void와 return 타입 안씀 >> {}안에서 결정됨
+	function print(){return ""} 
+	
+	//함수의 파라미터는 변수 이름만 쓴다
+	function print(num,num2){return num+num2}
+	*/
+
+	function callConfirm(){
+		//사용자 정의 함수
+		//내장함수를 브라우저 내부에 가짐
+		if(window.confirm("삭제할까요?")){arguments
+			//네 클릭
+			alert("네");
+		}else{
+			alert("아니오");
+		}
+	}
+	
+	//자동호출 되는 경우 onload
+	//직접호출
+	
+	
+	
+	/*
+	전통적인 팝업 (ex06 popup)
+	
+	별도의 html파일을 만들어서, 그 파일을 팝업으로 띄움
+	window.open(URL,name,specs...) 경로, 이름 ,옵션 정의
+	
+	현재 쓰는 방법 (ex06 bootmodal)
+	Bootstrap >> 모달로 띄움
+	그 페이지 안에서 div를 만들고, 만든 div를 띄움
+	
+	*/
+	function showPopup(){
+		window.open("Ex06_Popup.html","zipcode","width=200, height=200");
+		}
+	
+	function myFun(){
+		let popupWindow = window.open("Ex06_Popup.html","zipcode","width=200, height=200");
+	
+		//popupWindow가 팝업된 창
+		//변수에 담아서 제어 가능
+		popupWindow.document.write("<p>this is zipcode</p>")
+	
+	}
+	
+	function goUrlTime(url){
+		window.setTimeout("location.href='" + url + "'", 3000)
+		//URL www.naver.com  3초뒤 url로 이동...		
+		//location.href= 새로운 페이지 요청 >> 서버(spring, servlet 에서 redirect와 같음)
+	}
+	
+	//java public int myCallFunc(int i, int j, int k){return i+j+k;}
+	function myCallFun(i,j,k){
+		return i+j+k;
+	}
+	
+	
+	//javascript 이름없는 함수(익명함수) 
+	// 한번 실행하고 끝나는 함수 >> 재사용안됨
+	//function 이름 {}
+	
+	changeColor = function(){
+		//changeColor가 함수의 주소값 가짐
+		window.document.bgColor='silver';
+		window.document.fgColor="red";
+	}
+	
+	
+	
+	</script>
+
+
+</head>
+<body>
+	<h3>내장함수, 사용자 정의 함수 호출</h3>
+	<button onclick="callConfirm()">클릭 사건발생하면(함수호출) </button><br>
+	<button onclick="showPopup()">별도의 페이지 창(전통적인) </button><br>
+	<button onclick="myFun()">팝업창 제어 </button><br>
+	<button onclick="goUrlTime('http://www.daum.net')">3초뒤 이동 </button><br>
+	<button onclick="changeColor()">이름 없는 익명함수 호출 </button>
+
+</body>
+</html>

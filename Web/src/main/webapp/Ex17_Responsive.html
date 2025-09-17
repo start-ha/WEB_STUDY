@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Query Example</title>
+  <style>
+    .box {
+      max-width: 500px;
+      padding: 20px;
+      background-color: lightblue;
+      margin: 10px auto;
+      text-align: center;
+      font-size: 24px;
+    }
+
+		/* @media 태그 : 조건절. 사이즈에 따라 스타일 적용 
+			<-> 반응형*/
+	
+    /* 화면 너비가 600px 이하일 때 적용 */
+    @media (max-width: 600px) {
+      .box {
+        width: 100%; /* 화면 꽉 채움 */
+        background-color: lightcoral; /* 색상 변경 */
+        font-size: 18px; /* 글자 크기 축소 */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    반응형 박스
+  </div>
+</body>
+</html>
+
+
+</body>
+</html>

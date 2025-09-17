@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+	개발자 필수 태그
+
+	메모장 : 회원가입 페이지에 들어가는 태그, 로그인 태그
+ -->
+
+	<form action="Ex13_ok.jsp" method="post">
+		ID : <input type ="text" name="userid"><br>
+		PWD : <input type = "password" name ="userpwd"><br>
+		<input type = "submit" value = 전송>
+		<input type = "reset" value =초기화>
+	</form>
+	<!-- 
+	
+	[name]
+	동기식에서 꼭 필요
+	없으면 input의 value값 못받음
+	name으로 .jsp 서버쪽에서 데이터를 받음
+	
+	[form 태그]
+	1) 전송을 담당하는 태그
+	2) 클라이언트가 입력한 데이터를 가지고 action이 정하는 목적지로 배송
+	3) form 운송수단
+		1. action ="서버주소" >>목적지 주소 
+										>> JSP >> action = "Ex13_ok.jsp"
+			
+		2. 전송방식
+		method : 수단 
+		(동기식 post, get; 비동기식 put, delete;)							
+		>> servlet >> action ="Ex13_ok.do"
+		
+		-비행기 
+		method="post" Ex13_ok.jsp (http 내부 header안에 숨겨서 가져감)
+		-배 
+		method="get" Ex13_ok.jsp?userid=hong&userpwd=1004 //보안상 안좋음
+	
+		어떤 상황에는 무조건 배만 타야되는 경우
+		>> link (클릭해서 넘어가는 부분은 다 get 방식)
+		>> form태그를 못쓰는 경우는 다 get 방식
+		<a href = "boardDetail.jsp?no=100></a> 
+	 
+	 	3. 
+	 	동기식 post, get; 
+	 	비동기식 (REST 방식) get, post, put, delete;
+	 	
+	 
+	 [point]
+	 운송수단 
+	 선장 : 출발시키는 역할 submit()
+	 >> submit, button, image
+	 
+	 1. <input type = "submit" value = "전송">
+	 2. <input type = "button" onclick="call()" > submit()
+		2.1 function call() {document.form.submit();}
+	 3. <input type = "image" src=" "> 내부적으로 submit 기능 가지고 있음
+	 
+	 
+	 
+	 -->
+
+
+
+</body>
+</html>

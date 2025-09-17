@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	
+	
+	</script>
+	<style type="text/css">
+	/*
+	개발자 : css선택 (selector : css, javascript, jquery)
+	
+	1. 기본 선택자 (기존에 있는 태그들) : p, div, hr, h3
+	위에 태그에 스타일 입히기
+	ex) p {color : red}
+	
+	2. 다중 선택자 (그룹)
+	ex) p, h2, h3, h4 {color : blue} 태그 4개 모두 같은 스타일로
+	
+	3. 개발자 (사용자 정의)  [point***]
+	. >> class
+		ex).my-color{color : red} >>  <div class = "my-color">
+	
+	# >> id
+	
+	4. 결합 선택자
+	p{color:red}
+	p.one {border:1px} > <p></p> 중에서 <p class="one"></p>인 거 찾아라
+	p.two	> <p class="two"></p>
+	
+	5.자손(후손 선택자)
+	띄어쓰기
+	div p{color:green} (계층구조에서)div태그 아래 모든 p를 선택해서 적용
+	<div class="parent"><p><p> </p></p></div>
+	
+	6.자식 선택자
+	.parent > p
+	class가 parent인 div 안에 p태그에 스타일 입힘
+	<div class="parent"><p></p></div>
+	
+	7.속성 선택자 (attribute <font color="">)
+	input[type=text] {color:red}	input type이 text인걸 찾아서 속성변경
+	input[type=button]
+
+	8. + 인접한 형제(바로 옆만 잡음) , - 일반형제
+	
+	9. 가상선택자
+		a:link > 의미를 해석
+
+	*/
+
+	div p{color:green; font-family: "궁서체", "명조체", "광수체";}
+	/* div안의 p 모두 스타일 적용 궁서체 디폴트, 없으면 뒤에거 */
+	
+	.parent > p {border: 1px double blue; padding:10px; font-size: 15px;}
+	
+	input[type=text]{color:red;}	
+	input[type=button]{font-size:10px;}	
+
+	
+	
+	
+	</style>	
+</head>
+<body>
+<p>나는 어떤 스타일이 적용될까</p>
+		<div>DIV태그</div>
+		
+		<h3>하위 자손 선택자</h3>
+		<div>
+				<p>선택자</p>
+				<p>
+					선택자2
+					<p>선택자3</p>
+				</p>
+				<div>
+					<p>선택자4</p>
+				</div>
+		</div>
+		<h3>자식 선택자</h3>
+		<div class="parent">
+			<p>문단태그</p>
+		</div>
+		<hr>
+		<input type="text" value="css적용">
+		<input type="button" value="css적용">
+</body>
+</html>

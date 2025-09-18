@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			/*
+				onload 이벤트가 발생하는 시점
+				>>body 안에 있는 모든 요소가 브라우저 메모리에 로딩되고 난 후에
+				>>DOM객체 생성 후에			
+			
+				함수 이름 call()
+				1. <body onload = "call()">
+				2. window.onload = call(); 윈도우 객체 내장
+				3. window.onload = function(){} // 실제 개발>> 익명 함수로 던지기
+			
+				call 함수를 재사용하지 않는다면, 함수 이름 생략하고 > 익명함수로 제공 (일회성 함수)			
+			*/
+			window.onload = function(){ //로드함수 호출 후 out내용으로 덮어버림
+					let out = "";
+					out += "<ul>";
+						out += "<li>A</li>";
+						out += "<li>B</li>";
+					out += "<ul>";
+					
+					document.body.innerHTML=out;
+				}
+				//<ul>만 보임
+				//DOM > 동적 > 기존에 없던 태그 추가, 있는 것을 삭제, 있는 것은 변경
+				const header = document.createElement("h1"); //태그를 동적으로 만듬
+				//header = <h1></h1>
+				const textNode = document.createTextNode("hello");
+				
+				header.appendChild(textNode);
+				//<h1>hello</h1>  자식태그에 hello추가
+	
+				document.body.appendChild(header);
+				
+			//img 태그를 동적으로 만들고, src 속성도 동적으로 추가하고
+			// image/w3schools.jpg 넣고 body 의 자식요소로 append
+			
+			//태그이름.setAttribute("속성","값")
+			let img = document.createElement("img"); //태그생성
+			//<img>
+			img.setAttribute("src", "image/w3schools.jpg")
+			//<img src = "image/w3schools.jpg">
+			img.setAttribute("width",150);
+			img.setAttribute("height",150);
+			//<img src = "image/w3schools.jpg" width ="150" ....>
+			
+			document.body.appendChild(img); //body 태그 뒤에 동적으로 추가됨
+			
+	</script>
+</head>
+<body>
+	HELLO WORLD
+</body>
+</html>

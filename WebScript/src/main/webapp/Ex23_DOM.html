@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function(){
+	//DOM 계층트리 : node(부모, 자식, 형제 개념)
+	
+	let menode;
+	menode = document.getElementById("me");// <div id = "me">C</div>
+	menode.style.backgroundColor = "gold";
+	
+	let parentNode = menode.parentNode;//body
+	parentNode.style.backgroundColor = "blue";
+	
+	let grandNode = parentNode.parentNode;
+	grandNode.style.backgroundColor = "green";
+
+	let my = document.getElementById("mychild");
+	//<ul id="mychild"><li>AA</li><li>BB</li><li>CC</li></ul>
+	console.log(my); //mychild
+	console.log(my.firstChild.nodeName);  //li
+	console.log(my.firstChild.innerText); //AA
+	
+	//value 속성이 없는 친구들 : div, p, li, span
+	//innerHTML, innerText ex) <div>안녕</div>
+	console.log(my.firstChild.nextSibling.innerText); //BB
+	
+	console.log(my.hasChildNodes); 
+	console.log(my.childNodes); //배열 첨자[]
+	
+	console.log(my.childNodes.length); //배열의 개수
+	console.log(my.childNodes[0]);
+	}
+</script>
+
+
+</head>
+<body>
+	<div>A</div><div>B</div><div id="me">C</div><div>D</div><div>E</div>
+    <ul id="mychild"><li>AA</li><li>BB</li><li>CC</li></ul>
+</body>
+
+<script type="text/javascript">
+//로딩된 후에
+</script>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+		
+		let checkFlag = "false"; //전역변수 //check상태 짚어놓기
+		
+		function checkForm(){
+			let list = document.myform.list; //배열로 만들어서 list객체
+			console.log(list);
+			//각각의 태그가 checked = true
+			if(checkFlag == "false"){
+			
+			for(let index in list){
+				console.log(list[index]); //for문 한번돌 때 <input></input>하나
+				list[index].checked = true; //선택됐는지 판단이 모호함 >> 전역변수 생성
+			}
+			
+			checkFlag = "true";
+			return "[선택해제하기]"
+			
+			}else{
+				for(let index in list){
+					console.log(list[index]); //for문 한번돌 때 <input></input>하나
+					list[index].checked = false; //선택됐는지 판단이 모호함 >> 전역변수 생성
+				}
+				
+				checkFlag = "false";
+				return "[전체선택]"
+			}
+		}
+		
+		
+		
+		
+		</script>
+</head>
+	<body>
+		<form action="" name="myform">
+				좋아하는 과목은 : <br> 
+				<input type="checkbox" name="list" value="java" >JAVA<br>
+				<input type="checkbox" name="list" value="oracle">ORACLE<br>
+				<input type="checkbox" name="list" value="html">HTML<br>
+				<input type="checkbox" name="list" value="css">CSS<br> 
+				<input type="checkbox" name="list" value="script">SCRIPT<br> 
+				<input type="button" value="[전체선택] " onclick="this.value =checkForm()"><br>
+				<br> <input type="button" value="[선택해제]" 	onclick="this.value= checkForm2(this.form.list)"><br>
+			</form>
+	</body>	
+</html>

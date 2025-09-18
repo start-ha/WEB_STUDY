@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		.democlass {color: red;}
+	</style>
+</head>
+<body>
+	<div id="div">
+		<h1 class="democlass">Hello world_1</h1>
+		<h1 class="democlass">Hello world_2</h1>
+		<h1 class="democlass">Hello world_3</h1>
+	</div>
+</body>
+		<script type="text/javascript">
+			//document.getElementsByTagName("h1")[0].removeAttribute('class');
+			// <h1> Hello world_1 </h1>
+			
+			/*
+			let harray = document.getElementsByTagName("h1"); //타입 배열 Elements라서
+			console.log(harray); //배열
+			
+			for(let i = 0; i < harray.length; i++){
+				console.log(harray.length);
+				harray[i].removeAttribute('class');
+			}
+			
+			//<h1> Hello world_1 </h1>
+			//<h1> Hello world_2 </h1>
+			//<h1> Hello world_3 </h1>
+			
+			*/
+			
+			let array = document.getElementsByTagName("h1"); //h1태그들 배열
+			for(let index in array){
+				console.log(array[index]);
+				console.log("index : " + index + "-length : " + arrray.length);
+				document.getElementById("div").removeChild(array[index]);
+			}
+			
+			//동적배열이라서 공간을 밀고 올라가서 인덱스가 바껴서 두번째거가 남아있게 된다...
+			
+			let arr = document.getElementsByName("h1");
+			let len = arr.length; //3
+			for(let i = 0; i < len; i++){ //3번 반복하겠다 고정
+				//remove()
+				arr[arr.length-1].remove(); //[2] > [1] > [0]
+			}
+			
+			
+			const parent = document.getElementById('div');
+			const list = parent.getElementsByTagName('h1'); // 이 부모의 h1만
+			for (let i = list.length - 1; i >= 0; i--) {
+				console.log("i : " + i);
+		  		parent.removeChild(list[i]);
+			}
+			
+			
+			
+			
+		</script>
+		</html>

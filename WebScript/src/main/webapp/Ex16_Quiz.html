@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	//this.form : <form></form> 전체를 가리킨다
+	function eventProductor(frm){
+			console.log(frm);
+			console.log(frm.productor.value);
+			//console.log(frm.productor.text); //<option></option>사이의 텍스트를 text로 인식안한다
+			
+			//****select 태그 가지는 option 배열이다
+			console.log("index : " + frm.productor.selectedIndex);
+			//[<option][<option][<option][<option]
+			//직접 option의 인덱스로 접근하는 건 나온다
+			console.log(frm.productor.option[0].value);
+			console.log(frm.productor.option[0].text);
+			
+		  	let index = frm.eventProductor.selectIndex;
+		  	let text = frm.productor.option[index].text; //point
+		  	let value = frm.productor.option[index].value; 
+		  	
+		  	if(index == 0){ //제조사 문구 제외
+		  		frm.valProductor.value="";
+		  		frm.txtProductor.value="";
+		  	}else{
+		  		frm.valProductor.value=value;
+		  		frm.txtProductor.value=text;
+		  		
+		  	}
+			
+		}
+	
+	<!-- value와 text가 빈 박스 두개에 뿌려지길 원함 -->
+	</script>
+</head>
+<body>
+모델별 최저가 검색
+	<br>
+	<form name="frmdata">
+		<select style="width: 200px" name="productor" onchange="eventProductor(this.form)">
+			<option value="A000" selected>제조사</option>
+			<option value="A001">삼성전자</option>
+			<option value="A002">LG전자</option>
+			<option value="A003">Apple</option>
+			<option value="A004">Dell</option>
+		</select> 
+			<input type="text" name="valProductor" size="10"> 
+			<input type="text" name="txtProductor" size="10"> <br>
+	</form>
+</body>
+</html>

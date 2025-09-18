@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	
+	/*
+	https://www.w3schools.com/tags/ref_eventattributes.asp
+	
+	Event	Description
+	onchange	An HTML element has been changed
+	onclick	The user clicks an HTML element
+	onmouseover	The user moves the mouse over an HTML element
+	onmouseout	The user moves the mouse away from an HTML element
+	onkeydown	The user pushes a keyboard key
+	onload	The browser has finished loading the page
+	
+	Point
+	onload
+	>> body 안에 모든 요소가 웹 브라우저 메모리에 로딩되고 난 직후 사건이 발생
+	>> onload 사건 발생 >> 함수 실행 >> 
+	>>함수가 호출 되었을 때 모든 요소는 DOM 객체로 존재한다는 것을 보장받음
+	>> 페이지 로딩 후에..
+	
+	
+	*/
+	
+	//호출 시점 : body안에 모든요소가 메모리에 올라갔을 때
+	function bodyLoad(){
+		console.log("loading....");
+		//함수에서는 body안에 있는 모든 요소를 가지고 놀 수 있다
+		const data = document.myform.money.value;
+		console.log(isNaN(data)); //false 나 숫자야
+	}
+	
+	function focusFunc(){ //포커스가 들어오면
+		document.getElementById("myinput").style.backgroundColor="gold"; //동적으로 스타일 적용
+	}
+	
+	function blurFunc(){ //포커스가 떠나면
+		document.getElementById("myinput").style.backgroundColor="gold"; //동적으로 스타일 적용		
+	}
+	
+	function selectTag(){ //
+		const value = document.myform.sel.value;
+		alert(value);
+	}
+	
+	//POINT
+	//1. this(요소자신) >> input 태그 자신
+	//<input type="text" onmouseover="changeColor()" onmouseout="changeColor2(this)">
+	function changeColor(obj){
+		console.log(obj) //obj는 input 요소태그 각각 전체, 요소자신
+		obj.style.backgroundColor="gold"; //요소 전체에 스타일 줘서 배경컬러 변경
+	}
+		
+	
+	function changeColor2(obj){
+		console.log(obj)
+		obj.style.backgroundColor="white";
+	}
+	
+	</script>
+
+
+</head>
+
+<!-- body객체가 페이지에 로딩된 후에 -->
+		
+		<body onload="bodyLoad()">
+				<form action="#" name="myform">
+					<input type="text" id="myinput" name="myinput" onfocus="focusFunc()"  onblur="blurFunc()">
+					<br>
+					<select name="sel" onchange="selectTag()">
+						<option value="A">AA</option>
+						<option value="B">BB</option>
+						<option value="C">CC</option>
+						<option value="D">DD</option>
+					</select>
+					<br>
+					<!-- 마우스 올리면 색깔 바뀌는 거 -->
+					<input type="text" onmouseover="changeColor(this)" onmouseout="changeColor2(this)">
+					<input type="text"><br>
+					<input type="text" value="1000" name="money">
+				</form>	
+		</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		/*
+			1. 배열 > [] > const arr = [] > push(), pop()
+			2. JSON > {} > const obj = {} > obj.속성명, obj[키속성명 넣으면 value값 나옴]
+			
+			xml, json 이기종간의 데이터 교환
+			
+			날씨정보, 지하철 정보, 공공데이터 >> OPEN API >> xls, csv, xml, json
+			
+			API를 통해서 받아온 JSON 데이터에서 원하는 데이터만 추출해서 이쁘게 화면에 출력
+			
+		
+		
+		*/
+		
+		let students = []; //객체배열 [{},{},{}]
+			students.push({이름:"홍길동", 국어:80, 영어:60});
+			students.push({이름:"아무개", 국어:100, 영어:60});
+			students.push({이름:"이순신", 국어:80, 영어:70});
+		
+			//동적으로 함수를 추가함
+		for(let index in students){
+			students[index].getSum = function(){ return this.국어 + this.영어}
+			students[index].getAvg = function(){ return this.getSum()/2}
+		}
+		
+		//[{이름:"홍길동", 국어:80, 영어:60, getSum:function(){} }, {}, {} ]
+	
+		console.log(students);
+		for(let index in students){
+			console.log(students[index].이름);
+			console.log(students[index].getSum());
+			console.log(students[index].getAvg());
+		}
+		
+		
+		
+		</script>
+</head>
+<body>
+
+</body>
+</html>

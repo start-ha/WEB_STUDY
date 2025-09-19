@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	let array = ['포도', '사과'];
+	console.log(array.toString()); //포도,사과
+	console.log(array); //(2) ['포도', '사과']0: "포도"1: "사과"length: 2[[Prototype]]: Array(0)
+	//Object에 toString() 재정의. overriding
+	//디폴트로 .toString() 설정되어있음
+	
+	
+	//출력
+	//for 3개(일반, in, of)
+	
+	for( i = 0; i < array.length; i++){
+		console.log(array[i]);
+	}
+	
+	for(let index in array){
+		console.log(array[index]);
+	}
+	
+	for(let value of array){
+		console.log(value);
+	}
+	
+	//let array = ['포도', '사과'];
+	array[2] = "바나나";
+	console.log(array.toString() + "/" + array.length);
+	
+	//['포도', '사과', '바나나'];
+	//권장하지 않음
+	array[10] = "애플망고"; 
+	//다른 곳에 이상한 문자 들어가서
+	//포도,사과,바나나,,,,,,,,애플망고/11
+	console.log(array.toString() + "/" + array.length);
+	
+	let array2 = ["one", "two", "three"];
+	array.length=2; //권장하지 않음
+	console.log(array2 + "/" + array2.length);
+	array2.length = 10; //사용하지 말기
+	
+	//권장 
+	//BEST 빈배열만들고, 필요할 때마다 PUSH
+	let array3 = [];
+	array3.push("AA");
+	array3.push("BB");
+	
+	console.log(array3.pop());
+	
+	</script>
+</head>
+<body>
+
+</body>
+</html>
